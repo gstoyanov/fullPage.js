@@ -122,6 +122,7 @@
             scrollOverflow: false,
             touchSensitivity: 5,
             normalScrollElementTouchThreshold: 5,
+            slimScrollOptions: {},
 
             //Accessibility
             keyboardScrolling: true,
@@ -1951,12 +1952,12 @@
                         element.wrapInner('<div class="' + SCROLLABLE + '" />');
                     }
 
-                    element.find(SCROLLABLE_SEL).slimScroll({
+                    element.find(SCROLLABLE_SEL).slimScroll($.extend({
                         allowPageScroll: true,
                         height: scrollHeight + 'px',
                         size: '10px',
                         alwaysVisible: true
-                    });
+                    }, options.slimScrollOptions));
                 }
             }
 
